@@ -1,0 +1,99 @@
+\chapter{Description de l'application développée}
+
+Meuuuhble entend développer un nouveau canal de distribution en investissant dans le
+commerce en ligne, ce qui permettra de toucher une clientèle plus large et de faciliter l'expansion à
+l'international. La plateforme digitale sera conçue pour offrir une expérience utilisateur intuitive et engageante,
+renforçant ainsi la présence en ligne de Meuuuhble et son image de marque. C'est en cela que consistera la boutique en ligne développée pour Meuuuhble.
+
+\section{Description non technique de l'application}
+
+L'application développée est une plateforme de commerce en ligne dédiée à la vente de meubles. Elle permet aux utilisateurs de parcourir un catalogue de meubles, de les ajouter à leur panier, de passer commande, et de laisser des commentaires sur les produits qu'ils ont achetés.\\
+
+Voici les points clés définissant l'application éponyme de l'entreprise Meuuuhble :
+\begin{itemize}
+	\item \textbf{Achat d'articles :} Le site permettra aux utilisateurs d'acheter des meubles en ligne, avec un processus
+	de paiement sécurisé et une interface claire pour faciliter la transaction.
+	\item \textbf{Recherche avancée d'articles : }Une fonctionnalité de recherche avec des filtres dynamiques sera
+	intégrée, permettant aux clients de trouver facilement des articles selon différents critères tels que la catégorie, le prix, la couleur, le matériau, etc. Les articles pourront se décliner en différentes variantes, offrant ainsi un choix plus large.
+	\item \textbf{Commentaires et évaluations :} Les utilisateurs auront la possibilité de commenter et de noter les	articles qu'ils ont achetés, ce qui fournira des retours précieux à la fois pour Meuuuhble et pour les futurs acheteurs.
+	\item \textbf{Gestion des adresses d'expédition :} Les clients pourront enregistrer plusieurs adresses d'expédition et sélectionner l'adresse préférée lors du processus de commande, simplifiant ainsi les achats
+	répétés.
+	\item \textbf{Liste d'envies et historique :} Le site offrira la possibilité de créer une liste d'envies où les clients	pourront sauvegarder leurs articles préférés pour un achat futur. Un historique des derniers articles consultés sera également disponible pour faciliter la reprise du shopping.\\
+\end{itemize}
+
+
+Ces fonctionnalités sont conçues pour améliorer l'expérience client en ligne, augmenter
+l'engagement et favoriser la fidélisation. Elles soutiendront également les objectifs commerciaux de
+Meuuuhble en augmentant le taux de conversion et en élargissant sa clientèle.
+
+\section{Description technique de l'application}
+
+L'application utilise le framework web Flask pour le backend, écrit en Python. Flask est choisi pour sa simplicité et sa flexibilité, permettant de développer rapidement des applications web avec une structure claire et maintenable. L'architecture logicielle repose sur une séparation entre la logique de présentation (templates HTML) et la logique métier (contrôleurs).
+
+\subsection{Langages de Programmation}
+\begin{itemize}
+	\item \textbf{Frontend:} \textbf{JavaScript}, \textbf{HTML5}, \textbf{CSS3}
+	\item \textbf{Backend:} \textbf{Python 3}, avec \textbf{Flask} comme framework web et \textbf{Jinja} comme moteur de template	
+\end{itemize}
+
+\subsection{Bibliothèques et Frameworks}
+\begin{itemize}
+	\item \textbf{Bootstrap} pour la construction de l'interface utilisateur
+	\item \textbf{Flask :} Framework web en Python pour la création d'applications web et notamment les fonctionnalités suivantes :
+	\begin{itemize}
+		\item \textbf{request :} Permet d'accéder aux données de la requête entrante.
+		\item \textbf{render_template : }Utilisé pour rendre des modèles Jinja2 pour générer des pages HTML.
+		\item \textbf{redirect :} Redirige l'utilisateur vers une autre URL.
+		\item \textbf{url_for} : Génère une URL pour une fonction de vue spécifique.
+		\item \textbf{abort :} Arrête le traitement d'une requête et renvoie une réponse d'erreur.
+		\item \textbf{flash :} Utilisé pour afficher un message flash à l'utilisateur.
+		\item \textbf{session :} Permet de stocker des informations utilisateur entre les requêtes.
+		\item \textbf{g :} Objet global qui est utilisé pour stocker des données pendant toute la durée d'une requête.
+		\item \textbf{blueprint :} Permet de créer des modules Flask réutilisables et modulaires, regroupant des routes, des vues et d'autres fonctionnalités liées.
+	\end{itemize}
+	\item \textbf{SQLAlchemy :} Utilisé comme ORM pour faciliter l'interaction avec la base de données.
+	\item \textbf{pymysql :} Utilisé pour se connecter à une base de données MySQL et d'exécuter des requêtes SQL en utilisant Python
+\end{itemize}
+
+\subsection{Base de Données}
+\begin{itemize}
+	\item \textbf{mysql} pour le stockage des données relationnelles
+\end{itemize}
+
+\subsection{Infrastructure et Déploiement}
+\begin{itemize}
+	\item \textbf{Git} pour le contrôle de version
+	\item \textbf{Python-Anywhere} pour la présentation d'une maquette fonctionnelle au client
+\end{itemize}
+
+\subsection{Outils utilisés pour le développement}
+
+\begin{itemize}
+	\item \textbf{Visual Studio Code} et \textbf{Pycharm} pour le développement de l'application web.
+	\item \textbf{Datagrip} pour assister la gestion de la base de données mysql.
+	\item \textbf{Looping} pour l'élaboration du MCD et du MLD.
+\end{itemize}
+
+\subsection{Arborescence des Fichiers}
+
+Voici la représentation de l'arborescence des fichiers pour l'application meuuuhble :\\
+
+\dirtree{%
+.1 meuuuhble/.
+	.2 controllers/.
+		.3 \textit{Contient les fichiers python assurant le fonctionnement du site}.
+	.2 static/.
+		.3 assets/.
+			.4 \textit{Contient les scripts js et les feuilles de style css}.
+		.3 images/.
+			.4 \textit{Contient les photos des produits vendus}.
+		.3 images_asset/.
+			.4 \textit{Contient les images nécessaire a l'affichage du site}.
+	.2 templates/.
+		.3 admin/.
+			.4 \textit{Contient les templates jinja des pages côté administrateur}.
+		.3 auth/.
+			.4 \textit{Contient les templates jinja des pages d'authentifications}.
+		.3 client/.
+			.4 \textit{Contient les templates jinja des pages côté client}.
+}

@@ -1,0 +1,98 @@
+\chapter{Préconisation d'un poste de développement}
+
+\section{Comparaison des propositions précédentes}
+
+\subsection{Type de poste de travail}
+
+Un ordinateur fixe offre généralement une meilleure performance et une plus grande capacité de stockage que les ordinateurs portables pour un même prix. En revanche, si vous prévoyez des déplacements réguliers, il peut être intéressant de vous tourner vers un ordinateur portable quitte à sacrifier un peu de puissance ou augmenter votre budget.
+
+Dans votre cas, une grande partie de votre travail ne nécessite pas de vous déplacer chez vos clients, aussi, nous vous conseillons de vous tourner vers un ordinateur fixe.\\
+
+\textbf{Notre conseil :} Un poste de travail fixe
+
+\subsection{Performances recommandées}
+
+Parmi les propositions que nous vous avons faites, et d'après votre situation actuelle, nous vous conseillons d'éviter l'option la plus économique. En effet, les économies que vous effectuerez à l'achat se répercuteront sur votre productivité.
+
+En tant que développeur web, vous serez amené à effectuer de la retouche d'image voir de la conversion vidéo à des fins d'intégration sur vos pages web. L'absence de carte graphique rendra cette partie du travail lente et pénible et rallongera le temps de développement de vos sites ou en diminuera leur qualité.
+
+Si vous deviez choisir l'option économique que nous vous avons proposé, elle s'avèrera tout de même assez puissante pour vous permettre de travailler confortablement sur du développement web ne demandant pas de calcul graphiques poussés.\\
+
+\textbf{Notre conseil :}  Le poste de travail fixe intermédiaire \ref{2.1.2}
+
+\subsection{Choix du système d'exploitation et de l'environnement de bureau}
+
+Au vue du peu de différence notable entre Debian et Ubuntu, on choisira la distribution la plus simple d'accès pour vous à savoir Ubuntu.
+
+De la même façon, on choisira d'installer l'environnement KDE Plasma 5 pour sa facilité d'utilisation et sa modularité. Il inclue aussi une suite logicielle intéressante ainsi qu'un trousseau de clé qui vous permettra d'activer, notamment, les fonctions de synchronisation de Visual Studio Code sans plus de configuration.
+
+Il existe une déclinaison d'Ubuntu nommé Kubuntu qui inclue cet environnement de bureau, c'est donc celle-ci que nous allons installer.
+
+\textbf{Notre conseil :} Kubuntu - Kde Plasma 5
+
+\subsection{Logiciels conseillés}
+
+Parmi les logiciels que nous vous avons proposé, nous vous conseillons d'installer l'intégralité des logiciels gratuits. En effet, les alternatives payantes n'ont d'intérêt que si vous savez déjà pourquoi vous souhaiteriez les utiliser.
+
+\textbf{Notre conseil :} L'intégralité des logiciels détaillés en \ref{3.3.1} et \ref{3.3.2}
+
+\subsection{Solutions de stockage}
+
+Bien qu'un simple disque dur soit une alternative économique intéressante, nous pensons que la liberté et l'espace de stockage offerte par un NAS justifie son inclusion dans votre configuration. En effet, il sera plus simple pour vous de proposer un espace de stockage accessible en permanence et ceux peut importe que vous soyez à votre bureau ou en déplacement.
+
+Par ailleurs, nous vous recommandons vivement un système de stockage de type cloud pour sécuriser vos fichiers les plus importants en cas de panne de votre ordinateur ou de votre stockage local.
+
+\textbf{Notre conseil :} Un NAS et deux HDD 4TO + Dropbox
+
+\section{Prix}
+
+\begin{table}[ht]
+	\centering
+	\newcolumntype{C}{>{\centering\arraybackslash}p{3cm}}
+	\begin{tabularx}{\textwidth}{|C|X|}
+		\hline
+		\textbf{Matériel} & 1351.13\euro \\
+		\hline
+		\textbf{Logiciel} & 0\euro \\
+		\hline
+		\textbf{Stockage} & 502.83\euro + 192\euro/an \\
+		\hline
+		\hline
+		\textbf{Total} & 1853.96\euro + 192\euro/an \\
+		\hline		
+	\end{tabularx}
+	\caption{Prix total de la configuration conseillée}
+	\label{tab:prix}
+\end{table}
+
+\section{Explication des choix de composants des postes fixes}
+
+Nous détaillerons dans cette partie, uniquement la configuration que nous avons jugé la plus pertinente pour vos besoins. Nous restons à votre disposition pour plus d'informations sur les autres configurations.
+
+\begin{table}[ht]
+	\centering
+	\newcolumntype{C}{>{\centering\arraybackslash}p{4cm}}
+	\begin{tabularx}{\textwidth}{|C|X|X|}
+		\hline
+		\textbf{Composant} & \textbf{Explication} \\
+		\hline
+		\textbf{Processeur} & Nous avons choisi un processeur multi-coeur pour permettre le travail en multitâche. Sa capacité Turbo Boost permettra d'éviter les ralentissement de votre système en cas de lourdes charges de travail sur de courtes périodes (compilation par exemple). \\
+		\hline
+		\textbf{RAM} & Nous avons opté pour 16Go de mémoire vive afin de nous assurer que vous aurez suffisamment de mémoire pour vos opérations courantes en plus du serveur que vous souhaitez faire tourner sur votre machine. Nous avons choisi deux barrettes de 8Go plutôt qu'une barrette de 16Go pour des raisons de performance. \\
+		\hline
+		\textbf{Carte Graphique} & Nous avons choisi une carte graphique économique dans la mesure ou vous n'effectuerez aucune opération graphique lourde telle que de la modélisation 3D ou du traitement vidéo en 4K. Cette carte graphique devrait vous fournir la puissance nécessaire à du travail de retouche d'image et de conversion vidéo. \\
+		\hline
+		\textbf{SSD} & Nous avons opté pour un SSD plutôt qu'un HDD pour vous assurer un système plus réactif. 500Go seront plus que suffisant pour votre travail en cours. Le travail à archiver pourra être exporté sur un disque dur externe. Le travail à archiver pourra être exporté sur un disque dur externe, un NAS ou un Cloud. \\
+		\hline
+		\textbf{Carte Réseau} & Nous avons choisi cette carte réseau pour son côté polyvalent avec sa puce Wi-Fi et son bluetooth intégré qui vous permettra de connecter certains périphériques supplémentaires.  \\
+		\hline
+		\textbf{3x Écran} & Nous avons choisi des écrans standards puisque vous ne ferez pas de travail poussé en graphisme et n'aurez pas besoin d'une résolution ou d'une fidélité des couleurs supérieur. 3 écran vous offriront plus de confort en vous permettant de dédier un écran à votre code, un à l'aperçu du site, et un troisième pour l'affichage du cahier des charges ou d'une documentation par exemple. \\
+		\hline
+		\textbf{Carte-mère} & Nous avons choisi cette carte mère pour ses ports USB 3.1 qui vous permettront de connecter des périphériques haute-vitesse sans compromis. C'est aussi celle compatible avec tous les composants que nous avons sélectionné. \\
+		\hline
+		\textbf{Autres composants} & Les composants que nous n'avons pas cité plus-haut ont été principalement sélectionné pour leur rapport qualité-prix et leur compatibilité. \\
+		\hline
+	\end{tabularx}
+	\caption{Justification du choix de chacun des composants}
+	\label{tab:composants}
+\end{table}

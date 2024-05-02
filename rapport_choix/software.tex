@@ -1,0 +1,104 @@
+\chapter{Proposition d'architecture logicielle}
+
+\section{Système d'exploitation}
+
+\begin{table}[ht]
+	\centering
+	\newcolumntype{C}{>{\centering\arraybackslash}p{3cm}}
+	\begin{tabularx}{\textwidth}{|C|X|X|}
+		\hline
+		\textbf{Distribution} & \textbf{Avantages} & \textbf{Inconvénient} \\
+		\hline
+		\href{https://ubuntu.com}{\textbf{Ubuntu}\vspace{5px} \centering \includegraphics[width=0.7\linewidth]{images/Ubuntu}} & Dernières mises à jour des logiciels ; inclus dans ses dépots une sélection de logiciels et drivers propriétaire & Peut s'avérer moins stable mais suffisamment fiable pour une station de travail. \\
+		\hline
+		\href{https://www.debian.org}{\textbf{Debian}\vspace{5px} \centering \includegraphics[width=0.7\linewidth]{images/Debian}} & Globalement plus stable ce qui peut-être intéressant pour un serveur & Installer un logiciel propriétaire peut s'avérer plus compliqué ; les drivers open-sources peuvent impacter les performances de certains composants \\
+		\hline
+	\end{tabularx}
+	\caption{Avantages et inconvénients des distributions}
+	\label{tab:distrib}
+\end{table}
+
+
+\begin{table}[ht]
+	\centering
+	\newcolumntype{C}{>{\centering\arraybackslash}p{4cm}}
+	\begin{tabularx}{\textwidth}{|C|X|X|}
+		\hline
+		\textbf{Environnement de Bureau} & \textbf{Description} \\
+		\hline
+		\href{https://mate-desktop.org/fr/}{\textbf{Mate} \linebreak \vspace{5px} \centering \includegraphics[height=0.5\linewidth]{images/mate}} & Un environnement de bureau léger et modulable qui vous permettra d'exploiter au maximum les performances de votre machine. Son interface peut se réveler austère (voir figure) \\
+		\hline
+		\href{https://kde.org/fr/}{\textbf{KDE Plasma 5} \linebreak \vspace{5px} \centering \includegraphics[width=0.5\linewidth]{images/kdelogo}} & Un environnement de bureau complet, personnalisable et agencé comme Windows. Il est légèrement plus lourd et encombré que Mate mais est beaucoup plus confortable pour un usage quotidien. \\
+		\hline
+	\end{tabularx}
+	\caption{Présentation des environnements de bureau}
+	\label{tab:desktop}
+\end{table}
+
+\section{Organisation du système}
+
+\subsection{Les comptes utilisateurs}
+
+Un compte administrateur \textbf{"root"} sera disponible. Il ne doit être utilisé que par une personne compétente dans le cas d'un problème système à régler.\\
+
+Nous vous créerons un compte utilisateur qui vous permettra de travailler en sécurité sur votre machine. Ce compte aura accès à la commande \textit{\textbf{sudo}} pour vous permettre l'installation de nouvelles applications ou la mise à jour de votre système.
+
+Un second compte \textbf{"invité"} sera crée pour une personne souhaitant utiliser votre station de travail pour de la bureautique par exemple. Il n'aura pas accès à la commande \textit{\textbf{sudo}} pour des raisons de sécurité.
+
+Vous aurez la possibilité d'ajouter un compte utilisateur pour chaque personne souhaitant utiliser votre station de travail (nous vous recommandons de ne pas lui donner l'accès à la commande \textit{\textbf{sudo}} qui lui accorderait les droits d'administration sur votre système).
+
+\subsection{Organisation du disque}
+
+\subsubsection{Partitionnement}
+
+Nous n'effectuerons pas de double-boot dans la mesure où Windows ne vous sera pas utile pour le développement web, nous nous contenterons donc d'une simple installation de Linux pour des raisons d'optimisation de stockage. Dans le cas où vous choisiriez un ordinateur tournant sur MacOS, nous laisserions le système d'exploitation d'origine pour des raisons de compatibilité et de confort utilisateur.\\
+
+Dans le cas de l'installation d'un Linux, nous partitionnerons le disque de la façon suivante :
+\begin{itemize}
+	\item \textit{/boot} : 300 Mio - Cette partition contiendra tout ce qui permet à l'OS de booter.
+	\item \textit{/} : Occupera l'espace restant du disque. Elle contiendra tous les fichiers de l'OS.
+\end{itemize}
+\vspace{10px}
+Nous n'avons pas inclus de partition \textbf{SWAP} puisque toutes nos configurations possèdent au moins 16Go de mémoire vive, vous ne devriez donc avoir aucun problème de stabilité. Par ailleurs, la fonction d'hibernation nécessiterait un swap au minimum équivalent à votre mémoire vive ce qui viendrait réduire l'espace de stockage dont vous disposez.
+
+\subsection{Arborescence des Fichiers}
+Chaque utilisateur aura son dossier dans \textit{/home/<nom-de-l'utilisateur>} dans lequel se trouvera son travail. Ce dossier ne sera pas accessible par les autres utilisateurs du système. Il trouvera à l'intérieur :
+\begin{itemize}
+	\item Un dossier \textbf{"projets"} ou placer ses travaux en cours, c'est dans ce dossier qu'il pourra cloner les dépôts git sur lesquels il collaborera.
+	\item Un dossier \textbf{"archives"} ou poser ses travaux finis, pour une éventuelle réutilisation par exemple.
+	\item Un dossier \textbf{"ressources"} dans lequel il pourra placer tous les fichiers qu'il utilisera régulièrement dans son travail.
+\end{itemize}
+
+Un dossier \textit{/home/public} sera accessible en lecture et en écriture par tous les utilisateurs du système pour le partage de certains fichiers. Aucun utilisateur ne disposera du droit d'execution dans ce dossier pour des raisons de sécurité.
+
+\section{Logiciels}
+
+\subsection{Logiciels essentiels}\label{3.3.1}
+
+\begin{itemize}
+	\item \textbf{Mozilla Firefox, Google Chrome et GNOME Web} : pour pouvoir tester vos sites sur un navigateur Gecko, Blink et Webkit.
+	\item \textbf{Visual Studio Code} : un éditeur de code polyvalent permettant la programmation dans de multiple langages.
+	\item \textbf{DBeaver} : un IDE SQL open-source vous permettant de gérer plus facilement votre base de données.
+	\item \textbf{Python3 avec venv et Flask} : pour vous permettre de créer des applications web avec la possibilité d'avoir un environnement virtuel.
+	\item \textbf{Apache} : le serveur web le plus utilisé au monde 
+	\item \textbf{MariaDB} : comme système de gestion de base de données
+	\item \textbf{Zoom, Discord et/ou Slack} pour la communication entre clients et collaborateurs.
+\end{itemize}
+
+\subsection{Options supplémentaires gratuites}\label{3.3.2}
+
+\begin{itemize}
+	\item \textbf{Pycharm} : un IDE python efficace pour le développement d'application web sous flask, plus complet que Visual Studio Code mais moins polyvalent.
+	\item \textbf{Looping} : Un outil de création de MCD essentiel pour vous assister dans la conception de votre base de données.
+	\item \textbf{git} : pour une meilleure gestion de votre projet et une éventuelle collaboration sur ce dernier.
+	\item \textbf{GIMP} : pour la retouche d'images.
+	\item \textbf{LibreOffice} : une suite bureautique intéressante si vous prévoyez de sortir des devis, factures, suivre vos dépenses, etc.
+\end{itemize}
+
+
+\subsection{Alternatives Payantes}
+
+\begin{itemize}
+	\item \textbf{DataGrip} (en remplacement de DBeaver pour 229\euro\ HT par an) : Plus complet et ergonomique que DBeaver c'est une option intéressante si vous comptez travailler sur des bases de données assez complexes.
+	\item \textbf{WebStorm} (pour 159\euro\ HT par an) : Un IDE spécialisé dans le javascript. Intéressant si vous souhaitez concevoir des sites plus créatifs faisant usage intensif du javascript.
+\end{itemize}

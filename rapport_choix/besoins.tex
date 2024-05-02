@@ -1,0 +1,119 @@
+\chapter{Description des besoins}
+
+\section{Besoins contraints}
+
+\subsection{Matériel}
+
+\begin{itemize}
+	\item Processeur multi-cœur (par exemple, Intel Xeon)
+	\item Mémoire RAM suffisante pour gérer le trafic web (recommandé : 8 Go ou plus)
+	\item Espace de stockage SSD pour des performances rapides
+	\item Au moins 10 Go d'espace disque disponible pour le stockage de la base de données, des fichiers statiques (images, CSS, JS), et des logs.
+	
+\end{itemize}
+
+\subsection{Système d'exploitation}
+
+L'application a été développé et testé sur un système \textbf{Linux}. Ce sera ce système d'exploitation qui devra être installé sur votre serveur afin d'assurer le fonctionnement du site.
+
+\subsection{Langages et Bibliothèques}
+
+\begin{itemize}
+	\item \textbf{Python (version 3.8 ou supérieure) :} Nécessaire pour exécuter l'application Flask. Python doit être installé sur le serveur de production.
+	\item \textbf{Flask :} Le framework web utilisé pour développer l'application. Flask doit être installé via pip, le gestionnaire de paquets Python.
+	\item \textbf{SQLAlchemy :} Utilisé comme ORM pour faciliter l'interaction avec la base de données. À installer via pip.
+	\item \textbf{pymysql :} Utilisé pour se connecter à une base de données MySQL et d'exécuter des requêtes SQL en utilisant Python
+	\item \textbf{Jinja :} Moteur de template par défaut de Flask, pour la génération dynamique des pages HTML.
+\end{itemize}
+
+\subsection{Système de Gestion de Base de Données (SGBD)}
+
+\textbf{MySQL} ou \textbf{mariaDB} doivent être installés et configurés sur le serveur de production.
+
+\subsection{Comptes utilisateurs}
+
+Comptes utilisateurs avec accès \texttt{sudo} pour la gestion du serveur et de l'application. Ces comptes doivent avoir les permissions nécessaires pour installer des logiciels, gérer la base de données, et accéder aux fichiers de l'application.
+
+\subsection{Administration à Distance}
+
+\begin{itemize}
+	\item \textbf{SSH :} Pour l'administration à distance du serveur de production, l'accès SSH doit être configuré. Cela permet une connexion sécurisée au serveur pour la maintenance et le déploiement.
+	\item \textbf{Outils de déploiement :} Utilisation de Git pour le contrôle de version et de scripts de déploiement automatisés pour faciliter la mise à jour de l'application sur le serveur de production.
+\end{itemize}
+
+\section{Besoins ouverts}
+
+\subsection{Distribution Linux}
+
+Une distribution Linux recommandée pour héberger le site web serait \textbf{Ubuntu Server}, largement utilisée pour les serveurs web en raison de sa stabilité, de sa sécurité et de sa facilité d'utilisation. Voici quelques raisons pour lesquelles nous vous proposons ce choix :
+
+\begin{itemize}
+	\item \textbf{Stabilité :} Ubuntu Server bénéficie de mises à jour régulières et d'un support à long terme (LTS), assurant la stabilité du système d'exploitation.
+	\item \textbf{Sécurité :} Ubuntu Server est réputé pour sa sécurité renforcée et ses correctifs de sécurité réguliers.
+	\item \textbf{Facilité d'installation :} L'installation et la configuration d'Ubuntu Server sont relativement simples, ce qui facilite la mise en place du serveur.
+	\item \textbf{Support de la communauté :} Ubuntu dispose d'une vaste communauté en ligne prête à fournir de l'aide et des conseils en cas de besoin.\\
+\end{itemize}
+
+Cependant, vous pourriez aussi choisir d'installer une distribution \textbf{Debian} si les points suivants vous semblent pertinents :
+\begin{itemize}
+	\item Bien qu'Ubuntu Server bénéficie également de mises à jour régulières, Debian est souvent considéré comme plus conservateur en termes de stabilité, ce qui peut être un avantage pour les environnements critiques.
+	\item Certains utilisateurs estiment que Debian est plus strict en matière de sécurité.
+	\item Debian offre une grande flexibilité en termes de choix de logiciels et de configurations. Il permet une personnalisation approfondie pour répondre aux besoins spécifiques de l'utilisateur.
+\end{itemize}
+
+
+\subsection{Serveur web}
+
+Flask intègre déjà un serveur de développement. Cependant, pour la mise en production, un serveur web robuste comme Nginx ou Apache est recommandé pour servir l'application. Le choix entre Nginx et Apache peut dépendre des préférences de l'administrateur système ou de considérations spécifiques liées à la performance et à la sécurité.
+
+\subsection{Serveur de messagerie}
+
+Si l'application nécessite l'envoi d'emails (par exemple, pour la récupération de mots de passe ou les notifications), un serveur de messagerie est nécessaire. Des services comme SendGrid, Mailgun, ou l'utilisation d'un serveur SMTP local peuvent être envisagés.
+
+\subsection{Nom de domaine}
+
+\begin{itemize}
+	\item \textbf{www.meuuuhblesinnovants.com}
+	\begin{itemize}
+		\item \textbf{Extension} : .com, populaire et facilement mémorisable.
+		\item \textbf{Coût estimé} : Environ 8,50 € à 12,75 € par an.
+	\end{itemize}
+	
+	\item \textbf{www.espacemeuuuhble.shop}
+	\begin{itemize}
+		\item \textbf{Extension} : .shop, parfait pour un site de commerce en ligne.
+		\item \textbf{Coût estimé} : Environ 25,50 € à 34 € par an.
+	\end{itemize}
+	
+	\item \textbf{www.maisonmeuuuhble.net}
+	\begin{itemize}
+		\item \textbf{Extension} : .net, une alternative populaire au .com.
+		\item \textbf{Coût estimé} : Environ 8,50 € à 12,75 € par an.
+	\end{itemize}
+	
+	\item \textbf{www.luxeameuuuuhblement.store}
+	\begin{itemize}
+		\item \textbf{Extension} : .store, spécifiquement destiné aux boutiques en ligne.
+		\item \textbf{Coût estimé} : Environ 42,50 € à 51 € par an.
+	\end{itemize}
+\end{itemize}
+
+\section{Sécurisation / Utilisation de TLS}
+
+\subsection{Pourquoi sécuriser un site web ?}
+
+Sécuriser un site web est crucial pour protéger les données sensibles des utilisateurs contre les interceptions, les modifications non autorisées et autres cyberattaques. Cela aide à maintenir la confidentialité, l'intégrité et la disponibilité des informations.
+
+\subsection{Objectif de TLS}
+
+TLS (Transport Layer Security) vise à sécuriser les communications entre le navigateur de l'utilisateur et le serveur web. Il assure la confidentialité et l'intégrité des données échangées en chiffrant les informations transmises, empêchant ainsi les écoutes indiscrètes et les modifications non autorisées.
+
+\subsection{Mise en place de TLS}
+
+Pour mettre en place TLS, vous avez besoin :
+
+\begin{itemize}
+	\item D'un certificat SSL/TLS, qui peut être obtenu gratuitement via Let's Encrypt ou acheté auprès d'une autorité de certification.
+	\item De configurer le serveur web pour utiliser ce certificat et activer HTTPS.
+\end{itemize}
+
